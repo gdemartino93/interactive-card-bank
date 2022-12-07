@@ -12,24 +12,44 @@
 </head>
 <body>
     
-    <div class="webapp">
+    <div id="webapp">
         <section class="topside">
             <div class="col-12">
                 <div class="card-back">
-                    
+                    <span class="cvc"> {{cvc}} </span>
                 </div>
                 <div class="card-front">
-
+                    <span class="card-number">{{cardNumber}}</span>
+                    <span class="card-holder"> {{cardName}} </span>
                 </div>
             </div>
         </section>
-        <section class="bottomside">
-            <div class="col-12">
-
+        <section class="bottomside py-5">
+            <div class="container">
+                <div class="col-12">
+                    <h6>CARDHOLDER NAME</h6>
+                    <input class="form-control form-control-lg" type="text" placeholder="e.g. Jane Appleseed" aria-label=".form-control-lg example" v-model="cardName">
+                    <h6 class="mt-4">CARD NUMBER</h6>
+                    <input class="form-control form-control-lg" type="text" placeholder="e.g. 1234 5678 9123 0000" aria-label=".form-control-lg example" v-model="cardNumber" maxlength="16" data-pattern="0000 0000 0000 0000">
+                    <div class="col-12 d-flex justify-content-evenly mt-4">
+                        <div class="col-3">
+                            <h6>EXP. DATE</h6>
+                    <input class="form-control form-control-lg" type="text" placeholder="MM" aria-label=".form-control-lg example" v-model="monthExp" maxlength="2">
+                        </div>
+                        <div class="col-3">
+                            <h6>(MM/YY)</h6>
+                    <input class="form-control form-control-lg" type="text" placeholder="YY" aria-label=".form-control-lg example" v-model="yearExp" maxlength="2">
+                        </div>
+                        <div class="col-5">
+                            <h6>CVC</h6>
+                    <input class="form-control form-control-lg" type="text" placeholder="e.g. 123" aria-label=".form-control-lg example" v-model="name" maxlength="3">
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </section>
     </div>
-
     <script src="js/main.js"></script>
 </body>
 </html>

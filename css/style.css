@@ -15,13 +15,16 @@
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px ;
 }
-.webapp{
+#webapp{
     height: 100vh;
 }
 .topside{
     background: radial-gradient(circle at 50%, var(--purple), var(--very-dark-violet));
     height: 30vh;
     position: relative;
+}
+.bottomside{
+    margin-top: 70px;
 }
 .card-back{
     width: 300px;
@@ -44,4 +47,24 @@
     bottom: -31%;
     left: 3%;
     border-radius: 15px;
+}
+.cvc{
+    position: absolute;
+    bottom: 43%;
+    left: 75%;
+}
+.card-number{
+    position: absolute;
+    bottom: 30%;
+    left: 7%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.card-holder{
+    position: absolute;
+    left: 7%;
+    bottom: 10%;
+    font-size: 14px;
+    color: white;
 }
