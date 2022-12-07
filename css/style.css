@@ -20,5 +20,28 @@
 }
 .topside{
     background: radial-gradient(circle at 50%, var(--purple), var(--very-dark-violet));
-    height: 40vh;
+    height: 30vh;
+    position: relative;
+}
+.card-back{
+    width: 300px;
+    height: 180px;
+    background-image: url(../img/bg-card-back.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 11%;
+    bottom: 11%;
+    border-radius: 15px;
+}
+.card-front{
+    width: 300px;
+    height: 180px;
+    background-image: url(../img/bg-card-front.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -31%;
+    left: 3%;
+    border-radius: 15px;
 }
