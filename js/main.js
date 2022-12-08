@@ -6,7 +6,9 @@ const { createApp } = Vue
                 cvc : "",
                 nameFormatted : "",
                 card : "",
-                cardNumberFormatted : ""
+                monthExp : "",
+                yearExp : "",
+                cardAdded : false,
                
 
             }
@@ -23,9 +25,16 @@ const { createApp } = Vue
             },
             formatCard() {
                 let nn = this.card;
-                (nn.length - (nn.split(" ").length - 1)) % 4 === 0 ? this.card += ' ' : ''
-              }
+                (nn.length - (nn.split(" ").length - 1)) % 4 === 0 ? this.card += ' ' : ' '
+            },
+            addCard(){
+                this.cardAdded = true
+            },
+            refreshPage(){
+                location.reload()
+            }
         },
+
         
         mounted(){
          

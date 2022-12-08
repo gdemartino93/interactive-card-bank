@@ -19,34 +19,52 @@
                     <span class="cvc"> {{cvc}} </span>
                 </div>
                 <div class="card-front">
+                    <img src="img/card-logo.svg" alt="">
                     <span class="card-number" >{{card}}</span>
+                    <!-- Da gestire v-if -->
+                    <!-- <span class="card-number">0000 0000 0000 0000</span> -->
                     <span class="card-holder"> {{nameFormatted}} </span>
+                    <span class="card-month-expired">{{  monthExp  }}</span>
+                    <span class="card-year-expired">{{  yearExp  }}</span>
                 </div>
             </div>
             
         </section>
         <section class="bottomside py-5">
-            <div class="container">
+            <div class="container" v-if="cardAdded == false">
                 <div class="col-12">
                     <h6>CARDHOLDER NAME</h6>
-                    <input class="form-control form-control-lg" type="text" placeholder="e.g. Jane Appleseed" aria-label=".form-control-lg example" v-model="cardName" maxlength ="25" @KeyUp="cardHolderFormatted">
+                    <input class="form-control form-control-md" type="text" placeholder="e.g. Jane Appleseed" aria-label=".form-control-lg example" v-model="cardName" maxlength ="25" @KeyUp="cardHolderFormatted">
                     <h6 class="mt-4">CARD NUMBER</h6>
-                    <input class="form-control form-control-lg" type="text" placeholder="e.g. 1234 5678 9123 0000" aria-label=".form-control-lg example" v-model="card"  @KeyUp="formatCard">
-                    <div class="col-12 d-flex justify-content-evenly mt-4">
+                    <input class="form-control form-control-md" type="text" placeholder="e.g. 1234 5678 9123 0000" aria-label=".form-control-lg example" v-model="card"  @KeyUp="formatCard" maxlength="19">
+                    <div class="col-12 d-flex justify-content-evenly mt-4" >
                         <div class="col-3">
                             <h6>EXP. DATE</h6>
-                    <input class="form-control form-control-lg" type="text" placeholder="MM" aria-label=".form-control-lg example" v-model="monthExp" maxlength="2">
+                    <input class="form-control form-control-md" type="text" placeholder="MM" aria-label=".form-control-md example" v-model="monthExp" maxlength="2">
                         </div>
                         <div class="col-3">
                             <h6>(MM/YY)</h6>
-                    <input class="form-control form-control-lg" type="text" placeholder="YY" aria-label=".form-control-lg example" v-model="yearExp" maxlength="2">
+                    <input class="form-control form-control-md" type="text" placeholder="YY" aria-label=".form-control-md example" v-model="yearExp" maxlength="2">
                         </div>
                         <div class="col-5">
                             <h6>CVC</h6>
-                    <input class="form-control form-control-lg" type="text" placeholder="e.g. 123" aria-label=".form-control-lg example" v-model="name" maxlength="3">
-                        </div>
+                    <input class="form-control form-control-md" type="text" placeholder="e.g. 123" aria-label=".form-control-md example" v-model="cvc" maxlength="3">
+                        </div>         
                     </div>
                 </div>
+            </div>
+            <div class="container" v-if="cardAdded == true">
+                <div class="success-card">
+                    <img src="img/icon-complete.svg" alt="">
+                    <h1 class="mt-5">THANK YOU!</h1>
+                    <span class="text-secondary mt-4">We've added your card details</span>
+                    
+                </div>
+               
+            </div>
+            <div class="d-grid gap-2 col-11 mx-auto">
+                <button class="btn btn-primary-custom mt-5" type="button" @Click="addCard" v-if="cardAdded === false">Confirm</button>
+                <button class="btn btn-primary-custom mt-5" type="button" @Click="refreshPage" v-if="cardAdded">Continue</button>
             </div>
 
         </section>

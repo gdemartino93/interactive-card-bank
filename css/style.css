@@ -48,10 +48,21 @@
     left: 3%;
     border-radius: 15px;
 }
+
+/* Elemento | file:///C:/Users/gdema/Desktop/web/portfolio%20siti/interactive-card-bank/index.html */
+
+.card-front > img {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 55px;
+  }
+  
 .cvc{
     position: absolute;
     bottom: 43%;
     left: 75%;
+    color: white;
 }
 .card-number{
     position: absolute;
@@ -68,3 +79,30 @@
     font-size: 14px;
     color: white;
 }
+
+.card-month-expired {
+  position: absolute;
+  bottom: 9%;
+  right: 18%;
+  color: white;
+}
+
+.card-year-expired {
+    position: absolute;
+    bottom: 9%;
+    right: 9%;
+    color: white;
+  }
+  
+  .btn-primary-custom{
+    background-color: #241332;
+    color: white;
+  }
+  .success-card img{
+    width: 80px;
+  }
+  .success-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
