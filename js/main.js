@@ -4,18 +4,29 @@ const { createApp } = Vue
         data() {
             return{
                 cvc : "",
-                cardName : "",
                 nameFormatted : "",
-                cardNumber : ""
+                card : "",
+                cardNumberFormatted : ""
                
 
             }
         },
+        computed: {
+            // formatCardNumber(){
+            //   return this.cardNumber ? this.cardNumber.match(/.{1,4}/g).join(' ') : '';
+            // } 
+          },
+        
         methods:{
             cardHolderFormatted(){
                 this.nameFormatted = this.cardName.toUpperCase()
-            }
+            },
+            formatCard() {
+                let nn = this.card;
+                (nn.length - (nn.split(" ").length - 1)) % 4 === 0 ? this.card += ' ' : ''
+              }
         },
+        
         mounted(){
          
         }
