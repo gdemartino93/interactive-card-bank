@@ -31,21 +31,27 @@
             
         </section>
         <section class="bottomside py-5">
+            <div class="alert alert-danger" role="alert" v-if="field == 1" >
+                All fields are mandatory
+            </div> 
             <div class="container" v-if="cardAdded == false">
                 <div class="col-12">
                     <h6>CARDHOLDER NAME</h6>      
-
-                    <div class="alert alert-danger" role="alert" v-if="error == true">
+                    <!-- alert error -->
+                    <div class="alert alert-danger" role="alert" v-if="errorHolder == true">
                         Alphabet characters only (A-Z)
-                      </div>  
+                    </div>  
                     <input class="form-control form-control-md" type="text" placeholder="e.g. Jane Appleseed" aria-label=".form-control-lg example" v-model="cardName" maxlength ="25" @KeyUp="cardHolderFormatted">
-
-             
+          
                     <h6 class="mt-4">CARD NUMBER</h6>
+                    <div class="alert alert-danger" role="alert" v-if="errorNumber == true">
+                        Number characters only (1-9)
+                    </div>  
                     <input class="form-control form-control-md" type="text" placeholder="e.g. 1234 5678 9123 0000" aria-label=".form-control-lg example" v-model="card"  @KeyUp="formatCard" maxlength="19">
                     <div class="col-12 d-flex justify-content-evenly mt-4" >
+                        
                         <div class="col-3">
-                            <h6>EXP. DATE</h6>
+                    <h6>EXP. DATE</h6>
                     <input class="form-control form-control-md" type="text" placeholder="MM" aria-label=".form-control-md example" v-model="monthExp" maxlength="2">
                         </div>
                         <div class="col-3">
@@ -59,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container" v-if="cardAdded == true">
+            <div class="container" v-if="cardAdded">
                 <div class="success-card">
                     <img src="img/icon-complete.svg" alt="">
                     <h1 class="mt-5">THANK YOU!</h1>
