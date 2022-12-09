@@ -9,8 +9,8 @@ const { createApp } = Vue
                 monthExp : "",
                 yearExp : "",
                 cardAdded : false,
+                error : false,
                
-
             }
         },
         computed: {
@@ -22,6 +22,12 @@ const { createApp } = Vue
         methods:{
             cardHolderFormatted(){
                 this.nameFormatted = this.cardName.toUpperCase()
+                var letters = /^[a-zA-Z ]+$/
+                if(this.nameFormatted.match(letters)){
+                    this.error = false
+                }else{
+                    this.error = true
+                }
             },
             formatCard() {
                 let nn = this.card;
@@ -32,6 +38,9 @@ const { createApp } = Vue
             },
             refreshPage(){
                 location.reload()
+            },
+            onlyLetters(){
+
             }
         },
 

@@ -33,8 +33,14 @@
         <section class="bottomside py-5">
             <div class="container" v-if="cardAdded == false">
                 <div class="col-12">
-                    <h6>CARDHOLDER NAME</h6>
+                    <h6>CARDHOLDER NAME</h6>      
+
+                    <div class="alert alert-danger" role="alert" v-if="error == true">
+                        Alphabet characters only (A-Z)
+                      </div>  
                     <input class="form-control form-control-md" type="text" placeholder="e.g. Jane Appleseed" aria-label=".form-control-lg example" v-model="cardName" maxlength ="25" @KeyUp="cardHolderFormatted">
+
+             
                     <h6 class="mt-4">CARD NUMBER</h6>
                     <input class="form-control form-control-md" type="text" placeholder="e.g. 1234 5678 9123 0000" aria-label=".form-control-lg example" v-model="card"  @KeyUp="formatCard" maxlength="19">
                     <div class="col-12 d-flex justify-content-evenly mt-4" >
