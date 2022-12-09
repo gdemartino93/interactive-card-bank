@@ -60,3 +60,4 @@ const { createApp } = Vue
 
     }).mount("#webapp")
 
+// 1440px version desktop
