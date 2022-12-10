@@ -12,6 +12,8 @@ const { createApp } = Vue
                 errorHolder : false,
                 errorNumber : false,
                 field : 0,
+                maskNumber : "0000 0000 0000 0000",
+                maskName : "Jane Appleseed"
                
             }
         },

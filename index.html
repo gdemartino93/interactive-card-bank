@@ -16,16 +16,15 @@
         <section class="topside col-lg-4">
             <div class="col-12">
                 <div class="card-back">
-                    <span class="cvc"> {{cvc}} </span>
+                    <span class="cvc"> {{this.cvc == "" ? "000" : this.cvc}} </span>
                 </div>
                 <div class="card-front">
                     <img src="img/card-logo.svg" alt="">
-                    <span class="card-number" >{{card}}</span>
-                    <!-- Da gestire v-if -->
-                    <!-- <span class="card-number">0000 0000 0000 0000</span> -->
-                    <span class="card-holder"> {{nameFormatted}} </span>
-                    <span class="card-month-expired">{{  monthExp  }}</span>
-                    <span class="card-year-expired">{{  yearExp  }}</span>
+
+                    <span class="card-number" >{{ this.card == "" ? maskNumber : card}}</span>
+                    <span class="card-holder"> {{ this.nameFormatted == "" ? maskName : nameFormatted  }} </span>
+                    <span class="card-month-expired">{{  this.monthExp == "" ? "00" : monthExp  }}</span>
+                    <span class="card-year-expired">{{  this.yearExp == "" ? "00" : yearExp  }}</span>
                 </div>
             </div>
             
