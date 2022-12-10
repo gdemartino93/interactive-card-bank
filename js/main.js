@@ -38,21 +38,17 @@ const { createApp } = Vue
                 (nn.length - (nn.split(" ").length - 1)) % 4 === 0 ? this.card += ' ' : ' '
             },
             addCard(){
-                if (( this.errorHolder === false) && ( this.errorNumber === false) && ( this.nameFormatted !== "") && ( this.card !== "") && (this.monthExp !== "") && (this.yearExp !== "")){
+                if (( this.errorHolder === false) && ( this.errorNumber === false) && ( this.nameFormatted !== "") && ( this.card !== "") && (this.monthExp !== "") && (this.yearExp !== "") && (this.cvc !== "")){
                     this.cardAdded = true
                 }else{
                     this.cardAdded = false
                     this.field = 1
-                }
- 
-                
+                }      
             },
             refreshPage(){
                 location.reload()
             },
-            onlyLetters(){
 
-            }
         },
 
         
