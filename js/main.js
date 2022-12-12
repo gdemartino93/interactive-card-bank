@@ -28,7 +28,7 @@ const { createApp } = Vue
                 }
             },
             formatCard() {
-                let numbers = /^[0-9]+$/;
+                let numbers = /^[0-9  ]+$/;
                 if (this.card.match(numbers)){
                     this.errorNumber = false
                 }else{
